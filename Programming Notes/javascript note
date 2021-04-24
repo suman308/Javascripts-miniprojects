@@ -1,0 +1,8 @@
+difference between findindex indexof include 
+the sort() only compares the first element wether it is number or the alphabet then if the first character is same then it compare the second element. 
+
+Sort(sort function)  we can put the function inside it to compare the two numbers and the right function is array.sort( (a,b )=> a-b)
+
+every thing in the javascript is an object and to form the we can form object by making var obj = {} and we can set the key and value pair for the object using obj.ram = 0 and we can make the object counter as obj.ram += 1 
+
+=====================           Array in the javascript         =================================
