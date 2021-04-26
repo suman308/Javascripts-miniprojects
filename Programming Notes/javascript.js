@@ -98,4 +98,12 @@ console.log(num) ==> 1
     var greeter = "hey hi";
     greeter = "say Hello instead";
 
+ e) Hoisting of the var is as follows 
+   console.log (greeter);
+    var greeter = "say hello"
 
+        it is interpreted as this:
+
+     var greeter;
+    console.log(greeter); // greeter is undefined  It is interpreted as=> there is a variable but the assigning of the value is not done.
+    greeter = "say hello" // only the empty memory space is taken to the top but not it's value 
