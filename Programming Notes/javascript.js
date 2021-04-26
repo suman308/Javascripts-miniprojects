@@ -81,11 +81,9 @@ console.log(num) ==> 1
                   doors 5 
                   model mustan
 
- 	ROUGH 
- 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Herd the sheep back into their pasture before time runs out! A browser-based game inpired by a childhood growing up in Maine."> 
-    <meta property='og:title' content='Sheep on the Lam' />
-    <meta property='og:image' content='https://raw.githubusercontent.com/benrose207/SheepOnTheLam/master/assets/images/game_screenshot.png' />
-    <meta property='og:description' content='Herd the sheep back into their pasture before time runs out!' />
-    <meta property='og:url' content='https://benrose207.github.io/SheepOnTheLam/' />                 
+ 12) what is the difference between the let,  var and  const   
+
+  a) var => the scope of the var is global if it is declared outside the function 
+  b) var => the scope of the var is with in the function if it is delcare inside the function
+  c)
+
