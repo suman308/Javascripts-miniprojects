@@ -112,4 +112,15 @@ console.log(num) ==> 1
     1) Let is used for declaring the variable and one difference is that it cannot be redecalred
          let greeting = "say Hi";
          let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
-    2) let can be decalred in the 
+    2) let can be decalred in the different scope block 
+         let greeting = "say Hi";
+      if (true) {
+        let greeting = "say Hello instead";
+        console.log(greeting); // "say Hello instead"
+      }
+        console.log(greeting); // "say Hi"
+
+    3) the const is similar to the let and it is blocked scoped but it cannot be reassigned 
+      So my conclusion is that var is globally scoped and transend the block and acts as if it is reassigned or the 
+
+    
