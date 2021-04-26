@@ -107,3 +107,9 @@ console.log(num) ==> 1
      var greeter;
     console.log(greeter); // greeter is undefined  It is interpreted as=> there is a variable but the assigning of the value is not done.
     greeter = "say hello" // only the empty memory space is taken to the top but not it's value 
+
+    Let ///
+    1) Let is used for declaring the variable and one difference is that it cannot be redecalred
+         let greeting = "say Hi";
+         let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
+    2) let can be decalred in the 
