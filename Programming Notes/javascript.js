@@ -85,5 +85,17 @@ console.log(num) ==> 1
 
   a) var => the scope of the var is global if it is declared outside the function 
   b) var => the scope of the var is with in the function if it is delcare inside the function
-  c)
+  c) var tester = "hey hi";
+
+    function newFunction() {
+        var hello = "hello";
+    }
+    console.log(hello); // error: hello is not defined
+  d) var can be redeclared  and reassigned as follows
+    var greeter = "hey hi";
+    var greeter = "say Hello instead";
+    or 
+    var greeter = "hey hi";
+    greeter = "say Hello instead";
+
 
