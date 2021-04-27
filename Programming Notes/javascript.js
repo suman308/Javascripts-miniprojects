@@ -129,5 +129,31 @@ console.log(num) ==> 1
 
      2) How to declare the map object 
         we can do is let my = new map() ===> to store the key value pair we need to my["suman"] = 1 
-        my.has("suman")
-        
+
+        But very important rule is that 
+       
+
+        let wrongMap = new Map()
+        wrongMap['bla'] = 'blaa'
+        wrongMap['bla2'] = 'blaaa2'
+
+        console.log(wrongMap)  // Map { bla: 'blaa', bla2: 'blaaa2' } 
+
+          But that way of setting a property does not interact with the Map data structure. It uses the feature of the generic object. 
+          The value of 'bla' is not stored in the Map for queries. Other operations on the data fail:
+
+          wrongMap.has('bla')    // false
+          wrongMap.delete('bla') // false
+          console.log(wrongMap)  // Map { bla: 'blaa', bla2: 'blaaa2' }
+
+           The correct usage for storing data in the Map is through the set(key, value) method.
+
+        let contacts = new Map()
+          contacts.set('Jessie', {phone: "213-555-1234", address: "123 N 1st Ave"})
+          contacts.has('Jessie') // true
+          contacts.get('Hilary') // undefined
+          contacts.set('Hilary', {phone: "617-555-4321", address: "321 S 2nd St"})
+          contacts.get('Jessie') // {phone: "213-555-1234", address: "123 N 1st Ave"}
+          contacts.delete('Raymond') // false
+          contacts.delete('Jessie') // true
+          console.log(contacts.size) // 1
