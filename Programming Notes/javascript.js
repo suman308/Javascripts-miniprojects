@@ -123,4 +123,11 @@ console.log(num) ==> 1
     3) the const is similar to the let and it is blocked scoped but it cannot be reassigned 
       So my conclusion is that var is globally scoped and transend the block and acts as if it is reassigned or the 
 
-    
+    ==============================================      MAP    IN JAVASCRIPT     ==================================================================
+    ==================================// what is the difference between the map and object in the javascript ===============
+     1) the map is just similar to the object but map hold the sequence of the key value pair entered into the map but object may not hold the sequence 
+
+     2) How to declare the map object 
+        we can do is let my = new map() ===> to store the key value pair we need to my["suman"] = 1 
+        my.has("suman")
+        
