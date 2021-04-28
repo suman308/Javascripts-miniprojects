@@ -172,3 +172,12 @@ console.log(num) ==> 1
         console.log(map1.get('baz'));
           // expected output: undefined
      //get only checks if there is key or not 
+
+
+     ==================================================================== SET in JAVASCRIPT==================================================
+     1) set is array but has only unique elements 
+     2) set.has("name") ==> true or false 
+     3)set.clear()==> empty the whole set 
+     4) set.size =======> 1 // gives the length of the set 
+     5) set.add(name) ===> // add the object to the set  
+         mySet.add(5).add('some text'); // chainable ( what could be the time space complexity of add in set ==> )
