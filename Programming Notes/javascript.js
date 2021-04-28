@@ -147,8 +147,13 @@ console.log(num) ==> 1
           console.log(wrongMap)  // Map { bla: 'blaa', bla2: 'blaaa2' }
 
            The correct usage for storing data in the Map is through the set(key, value) method.
+          syntax is =======> myMap.set(key, value)
+          // Add new elements to the map with chaining.
+            myMap.set('bar', 'foo')
+                 .set(1, 'foobar')
+                 .set(2, 'baz');
 
-        let contacts = new Map()
+          let contacts = new Map()
           contacts.set('Jessie', {phone: "213-555-1234", address: "123 N 1st Ave"})
           contacts.has('Jessie') // true
           contacts.get('Hilary') // undefined
@@ -157,3 +162,13 @@ console.log(num) ==> 1
           contacts.delete('Raymond') // false
           contacts.delete('Jessie') // true
           console.log(contacts.size) // 1
+
+          3) const map1 = new Map();
+            map1.set('bar', 'foo');
+
+         console.log(map1.get('bar'));
+          // expected output: "foo"
+
+        console.log(map1.get('baz'));
+          // expected output: undefined
+     //get only checks if there is key or not 
