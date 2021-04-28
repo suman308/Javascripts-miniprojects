@@ -181,3 +181,34 @@ console.log(num) ==> 1
      4) set.size =======> 1 // gives the length of the set 
      5) set.add(name) ===> // add the object to the set  
          mySet.add(5).add('some text'); // chainable ( what could be the time space complexity of add in set ==> )
+     6) The following is the typical example how the set is implemented in the javascript 
+       class MySet {
+          constructor() {
+            this.hashMap = new HashMap();
+          }
+
+          add(value) {
+            this.hashMap.set(value);
+          }
+
+          has(value) {
+            return this.hashMap.has(value);
+          }
+
+          get size() {
+            return this.hashMap.size;
+          }
+
+          delete(value) {
+            return this.hashMap.delete(value);
+          }
+
+          entries() {
+            return this.hashMap.keys.reduce((acc, key) => {
+              if(key !== undefined) {
+                acc.push(key.content);
+              }
+              return acc
+            }, []);
+          }
+        }
