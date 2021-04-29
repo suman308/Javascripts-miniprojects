@@ -215,4 +215,5 @@ console.log(num) ==> 1
 
        ============================================================= Linked LIst ==========================================
        1) Node list  
-         Although NodeList is not an Array, it is possible to iterate over it with forEach(). It can also be converted to a real Array using Array.from().
+         a)Although NodeList is not an Array, it is possible to iterate over it with forEach(). It can also be converted to a real Array using Array.from().
+         b) linked list is just a object nested inside an object 
