@@ -221,11 +221,15 @@ console.log(num) ==> 1
        
          =============================================================Class in the javascript ========================================================
          1) In javascript the class is the special function and the class is declared with writing the class and class name
-              class Rectangle {
+              a) class Rectangle {
                   constructor(height, width) {
                     this.height = height;
                     this.width = width;
+                   }
                 }
-             }
 
-             again
+              b) one difference of the normal function and the class is that class is hoisted but the function is not hoisted 
+                  const p = new Rectangle(); // ReferenceError
+
+                      class Rectangle {}
+                  
