@@ -217,3 +217,15 @@ console.log(num) ==> 1
        1) Node list  
          a)Although NodeList is not an Array, it is possible to iterate over it with forEach(). It can also be converted to a real Array using Array.from().
          b) linked list is just a object nested inside an object 
+
+       
+         =============================================================Class in the javascript ========================================================
+         1) In javascript the class is the special function and the class is declared with writing the class and class name
+              class Rectangle {
+                  constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                }
+             }
+
+             again
