@@ -51,4 +51,5 @@ Delete (HashMap.delete)	            O(n)	        O(1)	        O(n) is an extreme
 In the space complexity of the how much space is taken by the data is considered 
 
 a) the string takes n space ie O(n) where n is the length of the String. and where as the integer symbol and boolean takes O(1)
-   no matter how big it is. 
+   no matter how big it is. this can be because the string at the end are conversted to the number and then to binary to store and
+   each binary number represent the one string
