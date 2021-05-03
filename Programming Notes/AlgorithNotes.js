@@ -64,4 +64,4 @@ c) Array.shift() ==> o(n) although we know we need to add one at the very begini
  d) Array.unshift() ==> o(n) although we know we need to add one at the very begining once we add something at the begining we
  need to shift all the other element one step further and then it become n numbers of the operation including adding at the begining
  e) forEach/map/filter/reduce ==> O(n) it all happen by going through each of the elements 
- f) slice, splice, => O(n)
+ f) slice, splice, concat=> O(n)

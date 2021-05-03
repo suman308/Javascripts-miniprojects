@@ -81,7 +81,7 @@ console.log(num) ==> 1
                   doors 5 
                   model mustan
 
- 12) what is the difference between the let,  var and  const   
+ 2) what is the difference between the let,  var and  const   
 
   a) var => the scope of the var is global if it is declared outside the function 
   b) var => the scope of the var is with in the function if it is delcare inside the function
@@ -122,6 +122,20 @@ console.log(num) ==> 1
 
     3) the const is similar to the let and it is blocked scoped but it cannot be reassigned 
       So my conclusion is that var is globally scoped and transend the block and acts as if it is reassigned or the 
+    4) unlike ruby where we can compare the two object in javascript we can only compare the two object if they have same memory location 
+       Object1 === object 
+                const hero1 = {
+            name: 'Batman'
+          };
+          const hero2 = {
+            name: 'Batman'
+          };
+          const hero3 = {
+            name: 'Joker'
+          };
+
+          isHeroEqual(hero1, hero2); // => true
+          isHeroEqual(hero1, hero3); // => false
 
     ==============================================      MAP    IN JAVASCRIPT     ==================================================================
     ==================================// what is the difference between the map and object in the javascript ===============
