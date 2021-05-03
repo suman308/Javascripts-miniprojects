@@ -61,3 +61,7 @@ a) Array.push() ==> O(1) since it pushes the things at the very end we know wher
 b) Array.pop() ===> O(1) Since it pop off the things from the very end of an array we know where we are looking at 
 c) Array.shift() ==> o(n) although we know we need to add one at the very begining once we add something at the begining we 
  need to shift all the other element one step further and then it become n numbers of the operation including adding at the begining
+ d) Array.unshift() ==> o(n) although we know we need to add one at the very begining once we add something at the begining we
+ need to shift all the other element one step further and then it become n numbers of the operation including adding at the begining
+ e) forEach/map/filter/reduce ==> O(n) it all happen by going through each of the elements 
+ f) slice, splice, => O(n)
