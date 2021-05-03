@@ -40,16 +40,24 @@ array.unshift	        O(n)	Insert element(s) to the beginning of the array
 array.slice	            O(n)	Returns a copy of the array from beginning to end.
 array.splice	        O(n)	Changes (add/remove) the array
 
-========================================== Map ===============================================================
+========================================== Map ====================================================================================
 Operation	                        Worst	    Amortized	    Comments
 Access/Search (HashMap.get)	        O(n)	        O(1)	        O(n) is an extreme case when there are too many collisions
 Insert/Edit (HashMap.set)	        O(n)	        O(1)	        O(n) only happens with rehash when the Hash is 0.75 full
 Delete (HashMap.delete)	            O(n)	        O(1)	        O(n) is an extreme case when there are too many collisions
 
-================================================= set using list ===================================================
-
+================================================= set using list ===================================================================
+====================================================================================================================================
+the important thing O(1)< O(n)< O(nlogn) < O(n^2)
+====================================================================================================================================
 In the space complexity of the how much space is taken by the data is considered 
 
 a) the string takes n space ie O(n) where n is the length of the String. and where as the integer symbol and boolean takes O(1)
    no matter how big it is. this can be because the string at the end are conversted to the number and then to binary to store and
    each binary number represent the one string
+
+========================================time and space complexity of an array ============================================================
+a) Array.push() ==> O(1) since it pushes the things at the very end we know where it is going 
+b) Array.pop() ===> O(1) Since it pop off the things from the very end of an array we know where we are looking at 
+c) Array.shift() ==> o(n) although we know we need to add one at the very begining once we add something at the begining we 
+ need to shift all the other element one step further and then it become n numbers of the operation including adding at the begining
