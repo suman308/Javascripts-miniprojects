@@ -39,7 +39,7 @@ array.shift	            O(n)	Remove element to the beginning of the array
 array.unshift	        O(n)	Insert element(s) to the beginning of the array
 array.slice	            O(n)	Returns a copy of the array from beginning to end.
 array.splice	        O(n)	Changes (add/remove) the array
-
+Array.indexOf("suman")  O(n)    checks every single element in the array
 ========================================== Map ====================================================================================
 Operation	                        Worst	    Amortized	    Comments
 Access/Search (HashMap.get)	        O(n)	        O(1)	        O(n) is an extreme case when there are too many collisions
