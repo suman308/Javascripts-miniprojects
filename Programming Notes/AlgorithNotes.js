@@ -65,3 +65,31 @@ c) Array.shift() ==> o(n) although we know we need to add one at the very begini
  need to shift all the other element one step further and then it become n numbers of the operation including adding at the begining
  e) forEach/map/filter/reduce ==> O(n) it all happen by going through each of the elements 
  f) slice, splice, concat=> O(n)
+
+ ============================================time and space complexity of searches =================================================================
+ a) Linear search => best = O(1) and worst = O(n)
+ b) Binary search => best = O(1) and worst = O(logn)
+
+
+ The bianry search using the loop 
+   function binarySearch(arr, num){
+  // add whatever parameters you deem necessary - good luck!
+  let start = 0
+  let end = arr.length
+  let mid = Math.floor((start + end) / 2);
+   while (arr[mid] !== num && start <= end ){
+      if( arr[mid] < num) {
+        start = mid + 1
+      } else if( arr[mid] > num) {
+        end = mid - 1
+      }
+
+      }
+      if( arr[mid] == num){
+        return mid
+      } else {
+        return -1
+      }
+    }
+
+ binarySearch([1,2,3,4,5,6,6,7,8], 5)
