@@ -121,3 +121,8 @@ return arr;
 }
 
 ram ([2,3,4,6,77,0,89]);
+
+
+=================================================== Sigle linked list = ========================================================
+1) single linked list  is property of the class which contains head tail and property. 
+2) 
