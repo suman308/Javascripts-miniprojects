@@ -93,3 +93,31 @@ c) Array.shift() ==> o(n) although we know we need to add one at the very begini
     }
 
  binarySearch([1,2,3,4,5,6,6,7,8], 5)
+
+ selection sort is the way of sorting the elements of the array by selecting the smallest elements in the array 
+ and arranging them form 0 to last 
+  let selectionSort = function(arr){
+
+  let j = 0;
+  let k = 0
+  while (j < arr.length){
+     let num = arr[j]
+    for(let i = j; i < arr.length; i ++){
+      if( arr[i] < num ){
+       num = arr[i]
+       k = i
+      }
+    }
+    let temp = num
+
+     arr[k] = arr[j]
+     arr[j] = num;
+     j++
+
+}
+return arr;
+
+
+}
+
+ram ([2,3,4,6,77,0,89]);
