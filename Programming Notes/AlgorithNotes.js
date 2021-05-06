@@ -124,5 +124,5 @@ ram ([2,3,4,6,77,0,89]);
 
 
 =================================================== Sigle linked list = ========================================================
-1) single linked list  is property of the class which contains head tail and property. 
-2) 
+1) single linked list  is property of the class which contains head tail and length property property. 
+  In the singly linked list there is only one way to move 
