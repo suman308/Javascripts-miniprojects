@@ -286,3 +286,6 @@ console.log(num) ==> 1
 
                     console.log(Point.displayName);      // "Point"
                     console.log(Point.distance(p1, p2)); // 7.0710678118654755
+
+      ============================================================================  Double Linked List =======================================================
+      The double linked list has the collection of the nodes connected to each other 
