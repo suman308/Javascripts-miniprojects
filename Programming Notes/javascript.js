@@ -288,4 +288,52 @@ console.log(num) ==> 1
                     console.log(Point.distance(p1, p2)); // 7.0710678118654755
 
       ============================================================================  Double Linked List =======================================================
-      The double linked list has the collection of the nodes connected to each other 
+    1) The double linked list has the collection of the nodes connected to each other 
+    2) usually the node is the class that contains the value and next and previous node 
+    3) the another class named the double linked list is the class that holds the general property of the whole data structure like length head and tail and
+       also all the instance function  that helps us manipulate and change the data structures 
+
+       class Node {
+         constructor(val){
+          this.val = val
+          this.next = null; 
+          this.previous = null 
+         }
+       }
+
+       class DoubleLinkedList {
+         constructor() {
+           this.head = null;
+           this.tail = null;
+           this.length = null 
+         }
+         push(val){
+           let newNode = new Node(val)
+           if(this.length == 0 ){
+             this.head = newNode; 
+             this.tail = newNode;
+           } else {
+             this.tail.next = newNode 
+             newNode.prev = this.tail
+             this.tail = newNode
+           }
+           this.length++
+           return this
+
+         }
+
+         Pop(){
+           if(!head ) return undefined;
+            let poppedHead = this.tail
+            if( this.length == 1){
+              this.head = null; 
+              this.tail = null;
+            } else {
+              this.tail = poppedHead.prev 
+              this.tail.next = null;
+            }
+            this.length--; 
+            return poppedHead; 
+           }
+         }
+       }
