@@ -335,5 +335,22 @@ console.log(num) ==> 1
             this.length--; 
             return poppedHead; 
            }
+
+           Shift(){ // the shift will just take the things form forward
+              if(this.length == 0) return undefined
+              var oldHead = this.head 
+              if(this.lenght === 1){
+                this.head == null; 
+                this.tail == null;
+              } else {
+                this.head == oldHead.next; 
+                this.head.prev = null;
+                oldHead.next = null;
+
+              }
+              this.length--; 
+              return oldHead;
+           }
+
          }
-       }
+       
