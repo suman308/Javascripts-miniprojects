@@ -16,6 +16,8 @@ Arrays in the javascript are just like the objects with the index and values in 
 
 1)  var num = 00001 
 console.log(num) ==> 1
+
+2) null vs undefined 
 ==================================================================           Array properties in the javascript         =================================
 
 1) animals = ["cat","dog","rabbit","bird","fish","zebra"];
@@ -348,9 +350,47 @@ console.log(num) ==> 1
                 newHead.prev = null;
                 oldHead.next = null; // one thing to note is that when we are breaking the chain we are as if we are deleting the node
               }
- 
+             this.length--
+             return oldHead
          }
        // Important:: we are mostly concerned with breaking chain of the nodes with in the instance of the main class called the double linked list
        // so we are not concerned about the isolated nodes they will be removed during garbage collection 
         // again the head and tail are always in the instance of the DDL instance 
-        
+        Unshift(val) { // we are adding a node before the head of the ddl class instance again it is all about chaining the node to the instance of the class
+          // but we are not concerned about the isolated nodes left after removing the chain from the instance of dll 
+        let newHead  = new Node ( val); 
+
+        if(this.length == 0 ){
+          this.head = this.tail = newHead;
+        } else {
+            newHead.prev = null
+        let oldHead  = this.head; 
+         this.head =  newHead 
+         this.head.next = oldHead;
+        }
+        this.length++;
+        return newHead;
+        }
+        Get(index){
+        if( index < 0 || index > this.length ) return undefined;
+        let i = 0;
+        let current = this.head
+        while ( index !=  i){
+          current = current.next; 
+          i++
+        }
+        return current;
+        }
+        set(index, value) {
+          let indexNode = this.get(index)
+          if(indxeNode != null){
+            indexNode.val = value; 
+            return true 
+          }else {
+            return false;
+          }
+        }
+
+
+      }
+
