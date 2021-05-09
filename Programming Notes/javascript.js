@@ -394,3 +394,13 @@ console.log(num) ==> 1
 
       }
 
+   =============================================================================Binary Search Tree==========================================================
+   1) Binary Search tree is the data structure that contains the sorted nodes  
+     and nodes are the instance of a class 
+       class Node  {
+         constructor(val){
+           this.left = null; 
+           this.right= null; 
+           this.value = val
+         }
+       }
