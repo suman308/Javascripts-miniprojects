@@ -407,5 +407,44 @@ console.log(num) ==> 1
     2) In the above the value is the value held by the node and left and right are the instance of the class node that are linked to the current node 
     3) Binary in the sense that it has at most two branching left and right 
     4) when we start from the current  root then smaller value is kept left and the larger value is kept at the right 
-    5) 
+    class Node {
+      constructor(val){
+        this.value = val;
+        this.left = null;
+        this.right = null;
+      }
+
+    class binarySearchTree {
+      constructor(){
+        this.root = null;
+
+      }
+    }
      
+    
+      Insert(val){
+      let newNode = new Node(val);
+      if( this.root == null){
+        this.root = newNode;
+        return this
+      } else {
+        let current = this.root 
+        while( true){
+         if( current.left == null){
+           current.left = newNode
+           return this
+         }else {
+           current = current.left
+         }
+        } else if( value > current.value ){
+          if(current.right === null){
+            current.right = newNode; 
+            return this;
+          } else {
+            current.right;
+          }
+        }
+
+      }
+      }
+    }
