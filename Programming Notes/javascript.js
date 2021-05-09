@@ -404,3 +404,5 @@ console.log(num) ==> 1
            this.value = val
          }
        }
+    In the above the value is the value held by the node and left and right are the instance of the class node that are linked to the current node 
+    
