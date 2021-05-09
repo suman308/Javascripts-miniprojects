@@ -337,20 +337,20 @@ console.log(num) ==> 1
            }
 
            Shift(){ // the shift will just take the things form forward
-              if(this.length == 0) return undefined
-              var oldHead = this.head 
-              if(this.lenght === 1){
-                this.head == null; 
-                this.tail == null;
-              } else {
-                this.head == oldHead.next; 
-                this.head.prev = null;
-                oldHead.next = null;
-
+              if( this.length== 0 ) return undefined; 
+              let oldHead = this.head; 
+              if( this.head == this.tail){
+                this.head = null; 
+                this.tail = null; 
+              }else {
+                let newHead = oldHead.next; 
+                this.head = newHead 
+                newHead.prev = null;
+                oldHead.next = null; // one thing to note is that when we are breaking the chain we are as if we are deleting the node
               }
-              this.length--; 
-              return oldHead;
-           }
-
+ 
          }
-       
+       // Important:: we are mostly concerned with breaking chain of the nodes with in the instance of the main class called the double linked list
+       // so we are not concerned about the isolated nodes they will be removed during garbage collection 
+        // again the head and tail are always in the instance of the DDL instance 
+        
