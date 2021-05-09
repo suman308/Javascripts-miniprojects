@@ -404,5 +404,8 @@ console.log(num) ==> 1
            this.value = val
          }
        }
-    In the above the value is the value held by the node and left and right are the instance of the class node that are linked to the current node 
-    
+    2) In the above the value is the value held by the node and left and right are the instance of the class node that are linked to the current node 
+    3) Binary in the sense that it has at most two branching left and right 
+    4) when we start from the current  root then smaller value is kept left and the larger value is kept at the right 
+    5) 
+     
