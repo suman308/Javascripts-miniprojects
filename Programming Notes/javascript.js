@@ -449,9 +449,15 @@ console.log(num) ==> 1
       }
 
       BFS() {
-        var node = this.root; 
+        let node = this.root; 
         data = []; 
         queue = []; 
-        while
+        queue.push(node);
+        while(queue.length){
+          node = queue.shift(); 
+          data.push(node);
+          if(node.left) queue.push(node.left); 
+          if(node.right) queue.push(node.right);
+        }
       }
     }
