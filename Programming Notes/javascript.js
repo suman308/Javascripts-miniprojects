@@ -447,4 +447,11 @@ console.log(num) ==> 1
 
       }
       }
+
+      BFS() {
+        var node = this.root; 
+        data = []; 
+        queue = []; 
+        while
+      }
     }
