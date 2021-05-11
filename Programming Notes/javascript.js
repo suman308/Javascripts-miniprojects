@@ -459,5 +459,7 @@ console.log(num) ==> 1
           if(node.left) queue.push(node.left); 
           if(node.right) queue.push(node.right);
         }
+        return data;
       }
     }
+    // the double linked list 
