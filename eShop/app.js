@@ -1,6 +1,8 @@
 const http  = require('http'); 
 const server = http.createServer((req, res)=> {
     const url = req.url 
+
+    console.log(url)
     const method = req.method;
     if(url === '/'){
     res.setHeader('Content-type', 'text/html'); 
@@ -9,6 +11,9 @@ const server = http.createServer((req, res)=> {
     res.write('<body><h1>"this is my first page made in the node.js"</h1> <form action="/message"  method="POST" type="text"><input type="text"></input> <button type="submit"> send</button></form> </body>' ); 
     res.end();
     } 
-    if(url ==='/'){}
+    if(url ==='/message' && method=="POST"){
+        const body = []; 
+        console.log(chuck)
+    }
 });
 server.listen(3000);
