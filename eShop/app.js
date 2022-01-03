@@ -1,7 +1,7 @@
 const http  = require('http'); 
 const server = http.createServer((req, res)=> {
     const url = req.url 
-
+    
     console.log(url)
     const method = req.method;
     if(url === '/'){
@@ -13,7 +13,7 @@ const server = http.createServer((req, res)=> {
     } 
     if(url ==='/message' && method=="POST"){
         const body = []; 
-        console.log(chuck)
+        
     }
 });
 server.listen(3000);
