@@ -7,5 +7,5 @@ app.use( (req, res, next) => {
     console.log
 })
 
-
-servr.listen(3000)
+const server = http.createServer(app)
+server.listen(3000)
