@@ -1,12 +1,9 @@
 const http = require('http'); 
-const express = require('express')
-const app = express(); 
+const server = http.createServer((req, res)=> {
+console.log(req.url, req.method);
+    res.write('<html><p>suman a</p></html>')
+    res.setHeader('Content-Type','text/html');
+    res.write('<p>hello there </p>');
+});
 
-app.use( (req, res, next) => {
-    res.send('<h>hello there</h>');
-    console.log("the server is running")
-    next();
-})
-
-const server = http.createServer(app)
-server.listen(3000)
+server.listen(3000);
