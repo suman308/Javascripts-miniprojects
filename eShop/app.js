@@ -10,10 +10,11 @@ console.log(req.url, req.method);
      res.write('<html> <p1> This is the second page page </p1>  </html> ')
  } else if( url =='/notnew'){
      res.write('<html> <p1> This is the third page </p1>  </html> ')
-     res.write('<html><h1>Thank you for the post </h1></html>')
-
- } else if( url =='/notenew' && method == ' POST'){
-     res.write('<html><h1>Thank you for the post </h1></html>'); 
+     res.write('html> <form action = "/note"  method ="POST"> <button> press here </button> </form></html>')
+     
+ } else if( url =='/note' && method == 'POST'){
+     res.write('<html> <h1>Thank you for the post </h1> </html>'); 
+     
  }
  
    else {
