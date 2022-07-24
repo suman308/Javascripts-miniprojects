@@ -1,45 +1,4 @@
-public class NumberSwaping {
-
-	public static void swapTwoNumTemp(int a , int b) {
-		int c = b; 
-		b = a; 
-		a = c; 
-		System.out.println(a + "\t"+ b);
-	}
-	
-	public static void swapTwoNumNoTemp(int a , int b) {
-		a = a + b; 
-		b = a-b; 
-		a = a-b;
-		System.out.println(a +"\t"+ b);
-		
-	}
-	
-	public static void swapThreeNumTemp(int a , int b, int c) {
-		int d = a; 
-		a = b; 
-		b = c; 
-		c = d;
-		System.out.println(a +"\t"+ b + "\t" + c); 
-	}
-	
-	public static void swapThreeNumNoTemp(int a, int b, int c) {
-		a = a + b + c;
-		b = a - b -c; 
-		c = a - b -c; 
-		a = a- b-c; 
-		System.out.println(a +"\t"+ b + "\t" + c); 
-		
-	}
-	public static void main(String[] args) {
-	 swapTwoNumTemp(1, 2); 
-	 swapTwoNumNoTemp(1, 2);
-	 swapThreeNumTemp(1,2,3); 
-	 swapThreeNumNoTemp(1,2,3);
-	 
-	}
-}
-
+=================================================:::First  and second part of assignment :::==================================================================
 public class assignment3to10 {
 	public static void oneToTen() {
 		int i=1; 
@@ -387,31 +346,338 @@ public class assignment3to10 {
 	
 
 	public static void main(String[] args) {
-//		isTheNumberEven(3); 
-//		isTheNumberPrime(7);
-//		factorial(5);
-//		isNumberArmstrong(153);
-//		isNumberPallindrome(1241);
-//		evenIntBelow100();
-//		primeIntBelow100();
-//		patternOne();
-//		patternTwo();
-//		patternThree();
-//		
-//		patternFive();
-//		patternSix();
-//		patternSeven();
-//		patternEight();
-//		patternNine();
-//		patternTen();
-//		
-//		floyedTriangle();
-//		pyramidPattern(6,7);
-//		
-//		squarePattern();
+		isTheNumberEven(3); 
+		isTheNumberPrime(7);
+		factorial(5);
+		isNumberArmstrong(153);
+		isNumberPallindrome(1241);
+		evenIntBelow100();
+		primeIntBelow100();
+		patternOne();
+		patternTwo();
+		patternThree();
 		
-//		switchDemo("A");
+		patternFive();
+		patternSix();
+		patternSeven();
+		patternEight();
+		patternNine();
+		patternTen();
+		
+		floyedTriangle();
+		pyramidPattern(6,7);
+		
+		squarePattern();
+		
+		switchDemo("A");
 		
 		
 	}
+}
+
+====================================================================::: Third part of assignment:::================================================
+public class ThirdAssignment {
+	
+// 1) Write a program to check if a given number is Positive, Negative, or Zero.
+//    If Statement 	
+
+	public static void IfNumberIsPosNegOrZeor(int number) {
+		
+		if( number == 0) System.out.println("The number is zero"); 
+		else if(number % 2 == 0) System.out.println("The number is even"); 
+		else System.out.println("The number is odd");
+	}
+	
+// 2) Write a program to check if the program has received command line arguments or not.
+//	  If the program has not received the values then print "No Values", else print all the 
+//    values in a single line separated by ,(comma). Eg1) java Example O/P: No values Eg2) 
+//    java Example Mumbai Bangalore O/P: Mumbai,Bangalore [Note: You can use length property of an array to check its length
+	
+
+    
+	public static void IsThereAnArgument() {
+		Scanner scan = new Scanner(System.in); 
+		String s = scan.nextLine();
+		if(s.length() == 0) System.out.println("No values"); 
+		else {
+			String[] arr = s.split(" "); 
+			s = String.join(",", arr);
+			System.out.println(s);
+		}
+	}
+	
+	
+	
+//	3) Initialize two character variables in a program and display the characters in alphabetical order. Eg1) 
+//  if first character is s and second is e O/P: e,s Eg2) if first character is a and second is e O/P:a,e
+	
+	
+ public static void characterHierchy(char a , char b) {
+	 if ( a > b) {
+		 System.out.println( a + "," + b);
+	 } else {
+		 System.out.println( b + "," + a);
+	 }
+ }
+ 
+ 
+//  4) Initialize a character variable in a program and if the value is alphabet then print "Alphabet" if it’s a number 
+//      then print "Digit" and for other characters print "Special Character"
+     
+ public static void digitOrAlphabet(char i ) {
+	 if( i >= '0'  &&  i <= '9') {
+		 System.out.println("Digit");
+	 } else if( i >= 65 && i <= 90 || i >= 97 && i <= 122) {
+		 System.out.println("Alphabet");
+	 } else {
+		 System.out.println("special character");
+	 }
+ } 
+ 
+ 
+//  5) Write a program to accept gender ("Male" or "Female") and age (1-120) from command line arguments and print 
+//     the percentage of interest based on the given conditions. 
+//     Interest == 8.2% Gender ==> Female Age ==>1 to 58 Interest == 7.6% Gender ==> Female Age ==>59 -120 Interest == 9.2% 
+//     Gender ==> Male Age ==>1-60 Interest == 8.3% Gender ==> Male Age ==>61-120
+//	   If Statement 
+ public static void PercentAge() {
+	 Scanner scan = new Scanner(System.in);
+	 System.out.println("Enter the gender "); 
+	 System.out.println();
+	 String gender = scan.next(); 
+	 gender = gender.toLowerCase();
+	 System.out.println();
+	 System.out.println("Ender the age");
+	 System.out.println();
+	 int age = scan.nextInt();
+	 
+	 if(gender.equals("male")) {
+		 if(age >= 1 && age <= 58) {
+			 System.out.println("Interest is  8.2%" );
+		 } else if(age >= 59 && age <= 120) {
+			 System.out.println("Interest is  7.6 %");
+		 } else {
+			 System.out.println("Invalid entry");
+			 
+		 }
+	 } else if ( gender.equals("female")) {
+		 if(age >= 1 && age <= 60) {
+			 System.out.println("Interest is 8.3%");
+		 } else if(age >= 61 && age <= 120) {
+			 System.out.println("interest is 7.9%");
+		 }
+		 else {
+			 System.out.println("Invalid entry");
+		 }
+	 } else {
+		 System.out.println("Invalid entry");
+	 }
+ }
+ 
+// 6)Write a program to convert from upper case to lower case and vice versa of an alphabet and print the old character 
+// and new character as shown in example (Ex: a->A, M->m).
+   public static void caseViseVersa(String s ) {
+	  if( s.toLowerCase().equals(s)) { 
+		  System.out.println( s + "-------->" + s.toUpperCase());
+	  } else {
+		  System.out.println(s + "--------->" + s.toLowerCase());
+	  }
+   }
+   
+//   7) Write a program to print the color name, based on color code. If color code in not valid then print "Invalid Code".
+//      R->Red, B->Blue, G->Green, O->Orange, Y->Yellow, W->White.
+   
+   public static void colorCode() {
+	   Scanner scan = new Scanner(System.in); 
+	   System.out.println(" choose the color code amoung R , G, B, O, Y , W"); 
+	   String s = scan.next().toLowerCase(); 
+	   switch(s) {
+	   
+	   case "r":
+		   
+		  System.out.println("Red");
+		  break; 
+	   case "g":
+	   	 System.out.println("Green");
+	   	 break;
+	   case "b":
+		   System.out.println("Blue");
+		   	 break;
+	   case "o": 
+		   System.out.println("Orange");
+		   	 break;
+	   case "y":
+		   System.out.println("Yellow");
+		   	 break;
+	   case "w":
+		   System.out.println("White");
+		   	 break;
+		   default: 
+			   System.out.println("Invalid entry");
+			   	 break;
+			
+	   }
+   }
+
+//  8) Write a program to print month in words, based on input month in numbers Example1:
+   public static void monthsCode() {
+	   Scanner scan = new Scanner(System.in); 
+	   System.out.println(" Enter the number "); 
+	   int s = scan.nextInt();
+	   switch(s) {
+	   
+	   case 1:
+		   
+		  System.out.println("January ");
+		  break; 
+	   case 2:
+	   	 System.out.println("February");
+	   	 break;
+	   case 3:
+		   System.out.println("March");
+		   	 break;
+	   case 4: 
+		   System.out.println("April");
+		   	 break;
+	   case 5:
+		   System.out.println("May");
+		   	 break;
+	   case 6:
+		   System.out.println("June");
+		   	 break;
+	   case 7:
+		   
+		  System.out.println("July");
+		  break; 
+	   case 8:
+	   	 System.out.println("August");
+	   	 break;
+	   case 9:
+		   System.out.println("September");
+		   	 break;
+	   case 10: 
+		   System.out.println("October");
+		   	 break;
+	   case 11:
+		   System.out.println("November");
+		   	 break;
+	   case 12:
+		   System.out.println("December");
+		   	 break;
+	   default: 
+		   System.out.println("Invalid entry");
+		   	 break;
+			
+	   }
+   }
+   
+//   9) Write a program to add all the values in a given number and print. Ex: 1234->10
+   
+      public static void digitSum() {
+    	  System.out.println("Enter the desired number plz");
+    	  Scanner scan = new Scanner(System.in); 
+    	  int number = scan.nextInt(); 
+    	  int n  = Integer.toString(number).length();
+    	  int sum = 0; 
+    	  for( int i = 0;  i < n; i++) {
+    		  
+    		  sum += number % 10; 
+    		  number /= 10;
+    	  }
+    	  
+    	  System.out.println(sum);
+      }
+      
+//      10) Write a program to print * in Floyds format (using for and while loop) *
+    
+      public static void floyedTriangle() {
+    	  Scanner scan = new Scanner(System.in);
+    	  System.out.println("Enter the row and column of the floyd triangle with a space in between" );
+    	  String[] rowCol = scan.nextLine().split(" "); 
+    	  int row = Integer.parseInt(rowCol[0]); 
+    	  int col = Integer.parseInt(rowCol[1]);
+    	  System.out.println(row + col);
+    	  int i  = 0, j =0;
+    	  while ( i < row ) {
+    		  j = 0;
+    		  while (j <= i) {
+    			  System.out.print("* ");
+    			  j++;
+    		  }
+    		  
+    		  System.out.println();
+    		  i++;
+    	  }
+      }
+      
+//    11)  Write a program that displays a menu with options 1. Add 2. Sub Based on the options chosen,
+//      read 2 numbers and perform the relevant operation. After performing the operation, the program should ask the user
+//      if he wants to continue. If the user presses y or Y, then the program should continue displaying the menu else the program should terminate.
+//      [ Note: Use Scanner class, you can take help from the trainer regarding the same ]
+//
+  public static void calculator() {
+	  Scanner scan = new Scanner(System.in);
+	  boolean test = true; 
+	  while(test) {
+		  System.out.println("****************************************************");
+		  System.out.println();
+		  System.out.println("choose 1 for addition");
+		  System.out.println("choose 2 for substraction");
+		  System.out.println("choose 3 if you want to exit"); 
+		  
+		  System.out.println();
+		  System.out.println("****************************************************");
+		
+		  int choice = scan.nextInt();
+		  
+		  switch(choice) {
+		  case 1: 
+			  
+			  System.out.println("enter the first number");
+			  System.out.println();
+			  int num1 = scan.nextInt();
+			  System.out.println("enter the first number");
+			  System.out.println();
+			  int num2 = scan.nextInt();
+			  System.out.println( "sum of two number is" + (num1 + num2));
+			  break;
+			  
+		  case 2:
+			  System.out.println("enter the first number");
+			  System.out.println();
+			  int num3 = scan.nextInt();
+			  System.out.println("enter the first number");
+			  System.out.println();
+			  int num4 = scan.nextInt();
+			  System.out.println( "substraction of two number is" + (num3 - num4));
+			  break; 
+			  
+		  case 3: 
+			 
+			  System.exit(0);
+			  break;
+			  
+		default: 
+			
+			break;
+		  }
+	  }
+	  
+	  
+	  
+  }
+	public static void main(String[] args) {
+//		IfNumberIsPosNegOrZeor(-2);
+//		IsThereAnArgument();
+		
+//		digitOrAlphabet('*');
+//		colorCode();
+//		monthsCode();
+//		digitSum();
+		
+//		floyedTriangle();
+		calculator();
+	}
+	
+
 }
