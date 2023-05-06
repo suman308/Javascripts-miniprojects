@@ -134,15 +134,29 @@ it cannot start with the number.
 
 IMPLICIT casting : is assigning the lower data type to higher data type  
 EXPLICIT casting : is assigning the higher data type to lower data type
-===========================================================================( Integer in java )======================================================================================
+===========================================================================( INTEGER IN JAVA )======================================================================================
 
 1) Interger.parseInt("45")  :::  45 // it will convert the string numbers into integer
 2) Double.parseInt( "45")   :::  45.0 && Double.parseInt("34.45") ==> 34.45 // it will convert the things to double 
 3) float 
 4) Integer.toString(123)   ::: it will convert the integer into string
 
-===========================================================================( String in java )=========================================================================================
+===========================================================================( STRING IN JAVA )=========================================================================================
+*** imp *** since String is immutable no matter what method we use we cannot change the string so it will create new string in the memory and 
+and point our reference to that newly changed string so obviously it will make the new copy 
 
+
+**imp** one very important thing to understand 
+String :: string is the  collection of the char in the java  and we can make string using  
+String str = new String("suman");  using new keyword we can create object;
+String is predefined class and it is availabe in java.lang* class; 
+String is immutable. Value of String cannot be changed 
+
+difference between == and boolean equal 
+
+== :: if we are working it check the content if we are working with object it checks the address  
+
+.equals( ) If operants are object it check the content if the content is same it will return true other wise false;
 
 1) The string is immutable in the java and also in the javascript  
 2) The string can be reassigned 
@@ -154,7 +168,7 @@ EXPLICIT casting : is assigning the higher data type to lower data type
    e) equals() / equalsIgnoreCase()  :::  "suman".equals("ram") ==> false 
    f) substring()                    :::  "suman".substring(1, 3) ==> "uma"
    g) toUpperCase() / toLowerCase()  :::   "ram".toUpperCase() ==> "RAM"
-   h) string.compareTo(otherString)  :::  return -1 or 0 or 1
+   h) string.compareTo(otherString)  :::  return -1 or 0 or 1 compare Lexicographically each and every char number 
 4) toString()                        :::  method can be used as the function of the any class and can be over written as 
    @Overrider 
     public String toString(){
@@ -185,7 +199,70 @@ EXPLICIT casting : is assigning the higher data type to lower data type
 
 10) trim() ::: " suman suma     ".trim() => suman suma // it will trim the front and back space;
 
+11) String str1.equalsIgnoreCase(str2) => it will ignore case 
 
+12) String a =  string.valueOf(any primitive data type ) ==> converts the char and other primitive  data types into string **imp**
+
+13) "sumanis".replace('s', 't') = > "tumant"; // it will replace the char 
+
+14) "welcome ram welcome".replaceAll("welcome, java");=> "java ram java"; // it will replace the string 
+
+
+15) "welcome ram welcom".replaceFirst("welcome","java") => "java ram welcome" 
+
+16) "welcome ram".subString(0, 5) => "welcom";
+
+17) "welcome ram".subString(3)=> "ome ram"; 
+
+18) "suman".toCharArray(); => {'s','u','m','a','n'} //It will convert the string to array of char 
+
+19) char [] raw = new char[] {'s','u','m','a','n'} String s = String.copyValueOf(raw); // it will convert the array of primitive data into string
+
+20) "summan".lastIndexOf('m') => gives the position of m from reverse
+21) "suman".lastIndexOF("an") => gives the position of an from reverse
+22) "suman".concat("tam") ==> "sumantam";
+23) "suman ra".contains("ra") ==> it will give the boolean true // we are checking the string contains string or not 
+24
+STRINGBUFFER ::
+string buffer represent group of character and each and each character will represent based on index value and string buffer is mutable 
+StringBuffer sb  = new StringBuffer(); the initial capacity of string buffer is 16; 
+after it reaches the initial limit of the 16 value then the next will be (initial length + 1) * 2
+
+1) sb.append("siva"); :: it can use (array, string , character array,primitive data type ); it will convert all the data type to the string and store 
+
+   sb.capacity() ==> will give the capacity not how many we have inside 
+   sb.length() ===> how many character we have 
+   sb1.capacity() ==> 16; 
+   sb1.length() ==> 0 
+   sb1.append(true); 
+   sb1.capacity() ==> 16; 
+   sb1.length() ==> 4;
+
+2)  sb.capacity() ==> will give the capacity not how many we have inside 
+
+3) sb.length() ===> how many character we have 
+   sb => "ram"
+4) sb.insert(1, "shiva"); ==> rshiva
+
+5) sb.delete(1,  5);  from one to 5 inclusive deleted ==> "r";
+
+6) sb.charAt(1) ==> 'r'
+
+7) sb.deleteCharAt(0)=> r is deleted;
+
+8) sb.ensureCapacity(2000)==> it will ensure/set  the capacity of the sb to 2000 
+
+9) sb.trimpToSize() ==> it will remove the extra allocated memory space 
+10) sb.substring(4,10)==>  it will give the sbustring from 4 and 10;
+11) sb.substring()
+12) although the default capacity is 16 we can do 
+     StringBuffer sb1 = new StringBuffer(5);
+     sb1.capacity() = > 5; 
+     sb1.append("sumank");
+     sb1.capacity() => 12; ==> 5 + 1 * 2;
+13) 
+
+STRING BUILDER::
  ===============================================================( Collections and data structure )================================================================================
                                                                       ===========
                                                                        COLLECTION  
@@ -205,6 +282,11 @@ EXPLICIT casting : is assigning the higher data type to lower data type
 
 
  ===========================================================================( Arrays in java )=================================================================================
+Array ::: Advantages ::
+ 1) Homogeneous data are stored 
+         2) Type casting is not required 
+         3) Performance is High 
+
 
 
 ***imp *** one important thing is we have to import the array anad arraylist from the util of the java at the top of the program::
@@ -963,6 +1045,13 @@ vvv imp make this all about the classes note remodel this
 
 =========================================( OBJECT ORIENTED PROGRAMMING AND CLASSES IN THE JAVA )======================================================
 
+oops::: 
+
+========================::::polymorphism:::============== 
+
+method over loading ::: run  time // the method is same but the number or the nature of arugments or both are different 
+
+method over ridding ::: compile time 
 
 Constructor :::  It is a type of function that is used to initialize an object from a class 
 
@@ -1140,6 +1229,58 @@ Constructor :::  It is a type of function that is used to initialize an object f
 
 
    }
+
+   Difference between this and super 
+
+   this. ::: it is used to call the instance variable and instance function of a child class or the class we are working on 
+   super. ::: when used in a instance class will refer the parent class and  super is used to differentiate the which function we are calliing 
+
+   having same name wether it is parent or child function with same name 
+
+   this()  ::: it is used to call the constructor from another constructor but we can only use only once ie from one constructor we can call 
+   another constructor only once 
+
+   super() ::: It is used to call the parent constructor from child constructor   
+
+
+   class B {
+      public B(){
+         System.out.println("This is parent constructor");
+      }
+   }
+
+   class A extends B {
+      public A(){
+         // hidden super() is always there
+         System.out.println("this is child constructor");
+      }
+   }
+
+   A a = new A(); first the super constructor will execute then the child constructor will be executed 
+
+   ** imp ** 1) if the super class have the parameterized constructor then it is mandatory for child class  to have a parameterized constructor 
+                or privide the artificial value it will create a compilation error 
+class B {
+   int i ; 
+   int j 
+   b(int i , int j ){
+     this.i = i; 
+     this.j = j; 
+
+   }
+}
+
+class A  extends B {
+   A(){// error since the parent constructor is parameterized but the child constructor is not parameterized 
+
+   }
+
+//    what we can do is 
+//  
+A(){
+   super(1, 2) // provide the artificail values  and it wil work fine 
+}
+}
    ============================================================================( INNER CLASSES IN THE JAVA  )=====================================================================
    1) Inner classes have access to all the variables and function of the outer class but we can have the same name for the variables inner and outer since things in inner classes 
      are not availabe outside that class but we do not use same name to remove confusion
@@ -1782,6 +1923,11 @@ PREFERANCE :: FIRST STAIC BLOCK THEN STATIC METHODS THEN INSTANCE BLOCK AND INST
                   }
 
 INTERFACES    ::: 
+imp:::
+ one interface can extends many interfaces 
+ one class can implements many infterfaces 
+ by default all functions are abstract in interface 
+ by defaults all the instance variables are constant 
 
 1) functional interface  // have only one abastract method; 
 2) normal interfacce     // have more than one abastract method; 
@@ -2236,16 +2382,130 @@ FROM OrderDetails;
 
 
 
+====================================================================< spring notes >=================================================
+
+1)  POM:: POM file in maven:: every  pom is registered to collection of schema  as XML name space and it should be registered in xmlns (XML Name space)
+
+   even  the spring has the same architecture of the name space for all the file schema
+   
+   every pom file is inside project tag and then inside that we have the schema definition and the xmlns description 
+   and then we have groupId, modelversion , groupid , version ,  artifact id and packaging 
+   <project 
+
+   </project>
+
+2) PACAKAGING::packaging tag can have many option like jar, war , ear , and pom 
+   if it has any other type of packaging  other than pom then maven will compile the code and prepare the artifact 
+   but if the packaging type is pom then if will not compile the code but still the dependencies, plugins and other things in the pom will be 
+   recognized. 
+3) so if we put the pom as the packaging in the pom.xml then we shouldn't put the src folder or the source code in the parent project project 
+
+4) then in the evey sub module we have to put parent tag and provide all the details like artifactid groupid and other things then we have to 
+go for the things about the modules and in the parent project we have to add the modules and put the aritfactId in the module tag 
+
+5) DEPENDENCYMANAGEMENT::  dependency management is the tag that is either present in the bom.xml or the pom.xml of the parent project. if we 
+   put the dependecies inside the dependency management of parent then we have to give to specify the groupid and artifact id but doesn't need 
+   to provide the version. But if we don't use the dependency management then all the dependencies are inherited in the child modules 
+6) PROPERTIES:: IT is used to define the place holder for the version and other namespace to be used somewhere else in the pom.xml 
+7) if we have to put the bean.xml file or collection of beans it has to be in the resources src/main/resources folder since spring mvc will look for the bean.xml file 
+in the resources folder and if we have to change the location of the bean.xml file then we have to provide the 
+8) The <build> tag in a Maven pom.xml file is used to configure the build process for a project. This section contains information about how the project should be built, such as what plugins to use, which goals to execute, and what directories to include or exclude.
+
+Here are some common elements that you might find in the <build> section of a pom.xml file:
+
+      <plugins>            : This element allows you to configure the plugins that are used during the build process. 
+                              Each plugin can be configured with its own set of goals, parameters, and dependencies.
+      <resources>          : This element specifies the resources (e.g., properties files, XML files) that should be included in the build.
+      <testResources>      : This element specifies the test resources that should be included in the build.
+      <sourceDirectory>    : This element specifies the directory where the project's source code is located.
+      <testSourceDirectory>: This element specifies the directory where the project's test code is located.
+
+9) <directory>       : tag inside the <build> section of a Maven pom.xml file is used to specify the output directory for the project's build artifacts.
+      <build>
+         <directory>./output</directory> 
+         ...
+      </build>
+The project build artifact will be stored in the output folder which is in the root directory of where the 
+      pom.xml is present
+10)<outputDirectory> :tag in the <build> section of a Maven pom.xml file is used to specify the directory where the compiled application 
+      code (e.g., .class files) should be placed. This tag specifies the output directory for the compiled code only, whereas 
+      the <directory> tag specifies the output directory for all other build artifacts.
+      In short, the <build> tag allows you to customize the build process for your Maven project by specifying various 
+      configuration options that Maven will use during the build.
+11) 
 
 
 
+<context-param>
+  <param-name>contextConfigLocation</param-name>
+  <param-value>/WEB-INF/spring-config/bean.xml</param-value>
+</context-param>
+in the web.xml file  where our bean.xml file is present in the spring-config folder inside WEB-INF folder
+
+8) if we want to declare or initialize the beans and declare in the bean.xml files and then 
+
+9) if we want to run the certain function in the class  
+
+@PostConstruct
+    public void init() {
+        // Perform any initialization here
+        // This method will be called after all dependencies have been injected
+    }
 
 
+@PostConstruct is part of the Java EE standard, and it is also supported by Spring.
+Similarly to @PostConstruct, @PreDestroy can be used to perform any necessary clean-up or shutdown operations before the bean is destroyed.
+
+::: JBOSS Server :::
+===============================:::  contents :::==============================
+1)<?xml version='1.0' and encoding='utf-8'?> ::: like any xml documents it contains <?xml version='1.0' and encoding='utf-8'?> it just say which version of the xml we are using just like which 
+version of the html we are using 
+2)  <server xmlns="urn:jboss:domain:16.0">   ::: then we have the tag 
+   <server xmlns="urn:jboss:domain:16.0"> 
+     everything we need are inside here 
+
+   </server> 
+3) <extensions>                              :::inside the server there is <extensions> all the extension are added and the major
+ functionalities of the server are due to these extensions 
+it might do one of the following tasks
+Adding support for new Java libraries or frameworks
+Implementing new security protocols
+Enabling new database connectors
+Providing additional messaging services
+Enhancing performance or scalability
+modules just contains the configuration files for those functions to be carried out
+4) <subsystem xmlns=>  it contains all modular subsytem 
+ a) they may be for the datasource configuration <subsystem xmlns ="urn:jboss:domain:datasources:6.0>
+ d) 
+ b) They may be for the webservice call configuration <subsystem xmlns ="urn:jboss:domain:logging:8.0>
+ d) 
+ c) They may be for the logging configuration <subsystem xmlns ="urn:jboss:domain:logging:8.0>
+ d) 
+
+5) <socket-binding-group> ::: it contains the collection of the socket-binding 
+6) <socket-binding>       ::: it represent the socketbinding, port etc for the http https,ajp and other protocal for the server 
+   it also contains the some custom socket-bindings a well like management-http 
+7) <server xmlns="urn:jboss:domain:13.0">
+    <extensions>
+        <!-- Extension modules here -->
+    </extensions>
+    <system-properties>
+        <!-- System properties here -->
+    </system-properties>
+    <management>
+        <!-- Management subsystem here -->
+    </management>
+    <profile>
+        <subsystem xmlns="urn:jboss:domain:undertow:12.0">
+            <!-- Undertow subsystem configuration here -->
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:datasources:6.0">
+            <!-- Datasources subsystem configuration here -->
+        </subsystem>
+        <!-- Other subsystems here -->
+    </profile>
+</server>
 
 
-
-
-
-
-
+pom.xml
 
