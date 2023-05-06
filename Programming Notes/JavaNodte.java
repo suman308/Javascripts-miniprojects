@@ -2509,3 +2509,33 @@ modules just contains the configuration files for those functions to be carried 
 
 pom.xml
 
+==================================================================GIT NOTES=================================================
+1) git config --list => This will show the local setting and email  assocaited with the repo
+The above command will result in this 
+credential.helper=osxkeychain
+init.defaultbranch=main
+color.ui=true
+user.name=“sumankoder”
+user.email=suman.k.coder308@gmail.com
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslverify=false
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+core.precomposeunicode=true
+remote.origin.url=https://github.com/suman308/Javascripts-miniprojects.git
+remote.origin.fetch=+refs/heads/:refs/remotes/origin/
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+2) git config --global --list => This will show the remote setting and emails associated with the repo
+
+3) git config --global user.name "NEW_NAME"
+   git config --global user.email "NEW_EMAIL"  to change the global user account 
+
+4) git branch --set-upstream-to=upstream_branch local_branch
