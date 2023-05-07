@@ -2510,7 +2510,7 @@ modules just contains the configuration files for those functions to be carried 
 pom.xml
 
 ==================================================================GIT NOTES=================================================
-1) git config --list => This will show the local setting and email  assocaited with the repo
+1) git config --list ===> This will show the local setting and email  assocaited with the repo
 The above command will result in this 
 credential.helper=osxkeychain
 init.defaultbranch=main
@@ -2539,3 +2539,17 @@ branch.master.merge=refs/heads/master
    git config --global user.email "NEW_EMAIL"  to change the global user account 
 
 4) git branch --set-upstream-to=upstream_branch local_branch
+
+5) git branch ===> it will show all the branches in the local 
+    master
+   * notes  we are at this local branch
+6) git branch -a ===> it will show all the branches both remote and local 
+    master
+* notes
+  remotes/origin/HEAD -> origin/master this is the symbolic head to say we are at this in the local 
+  remotes/origin/master -> one of the remote branchs in remotes
+
+  7) git remote -v 
+     it will show all the remote repos connected to our local repo
+
+  8) git push -u origin master ===> for the first
