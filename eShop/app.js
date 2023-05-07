@@ -3,6 +3,9 @@ const server = http.createServer((req, res)=> {
 console.log(req.url, req.method);
 
  const url = req.url; 
+
+ const u =  new URL(); 
+ console.log(u)
  const method = req.method 
  if (url == '/') {
      res.write('<html> <p1> This is the first page </p1>  </html> ')
@@ -20,6 +23,8 @@ console.log(req.url, req.method);
    else {
      res.write('<html> <p1> 404 error </p1>  </html> ')
    }
+
+   console.log()
 });
 
 server.listen(3000);
