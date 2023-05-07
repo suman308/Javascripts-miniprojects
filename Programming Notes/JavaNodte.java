@@ -2553,3 +2553,10 @@ branch.master.merge=refs/heads/master
      it will show all the remote repos connected to our local repo
 
   8) git push -u origin master ===> for the first
+
+  9) even if we remove use the config username and password we have to remove the gitkey chain in the mac 
+  since it will have the username and password from earlier setup 
+  10) we cannot use the password to set upstream branch or the push to the new branch we have to generate 
+  personal token going to setting developers tool and user the username and in place of the password 
+  we have to use that personal acess token for the first time authentication and we need to do this once we 
+  have deleted the git.com from the keychain in mac
