@@ -2232,6 +2232,188 @@ CASE
     ELSE 'The quantity is under 30'
 END AS QuantityText
 FROM OrderDetails;
+					
+					====================================================================< spring notes >=================================================
+
+1)  POM:: POM file in maven:: every  pom is registered to collection of schema  as XML name space and it should be registered in xmlns (XML Name space)
+
+   even  the spring has the same architecture of the name space for all the file schema
+   
+   every pom file is inside project tag and then inside that we have the schema definition and the xmlns description 
+   and then we have groupId, modelversion , groupid , version ,  artifact id and packaging 
+   <project 
+
+   </project>
+
+2) PACAKAGING::packaging tag can have many option like jar, war , ear , and pom 
+   if it has any other type of packaging  other than pom then maven will compile the code and prepare the artifact 
+   but if the packaging type is pom then if will not compile the code but still the dependencies, plugins and other things in the pom will be 
+   recognized. 
+3) so if we put the pom as the packaging in the pom.xml then we shouldn't put the src folder or the source code in the parent project project 
+
+4) then in the evey sub module we have to put parent tag and provide all the details like artifactid groupid and other things then we have to 
+go for the things about the modules and in the parent project we have to add the modules and put the aritfactId in the module tag 
+
+5) DEPENDENCYMANAGEMENT::  dependency management is the tag that is either present in the bom.xml or the pom.xml of the parent project. if we 
+   put the dependecies inside the dependency management of parent then we have to give to specify the groupid and artifact id but doesn't need 
+   to provide the version. But if we don't use the dependency management then all the dependencies are inherited in the child modules 
+6) PROPERTIES:: IT is used to define the place holder for the version and other namespace to be used somewhere else in the pom.xml 
+7) if we have to put the bean.xml file or collection of beans it has to be in the resources src/main/resources folder since spring mvc will look for the bean.xml file 
+in the resources folder and if we have to change the location of the bean.xml file then we have to provide the 
+8) The <build> tag in a Maven pom.xml file is used to configure the build process for a project. This section contains information about how the project should be built, such as what plugins to use, which goals to execute, and what directories to include or exclude.
+
+Here are some common elements that you might find in the <build> section of a pom.xml file:
+
+      <plugins>            : This element allows you to configure the plugins that are used during the build process. 
+                              Each plugin can be configured with its own set of goals, parameters, and dependencies.
+      <resources>          : This element specifies the resources (e.g., properties files, XML files) that should be included in the build.
+      <testResources>      : This element specifies the test resources that should be included in the build.
+      <sourceDirectory>    : This element specifies the directory where the project's source code is located.
+      <testSourceDirectory>: This element specifies the directory where the project's test code is located.
+
+9) <directory>       : tag inside the <build> section of a Maven pom.xml file is used to specify the output directory for the project's build artifacts.
+      <build>
+         <directory>./output</directory> 
+         ...
+      </build>
+The project build artifact will be stored in the output folder which is in the root directory of where the 
+      pom.xml is present
+10)<outputDirectory> :tag in the <build> section of a Maven pom.xml file is used to specify the directory where the compiled application 
+      code (e.g., .class files) should be placed. This tag specifies the output directory for the compiled code only, whereas 
+      the <directory> tag specifies the output directory for all other build artifacts.
+      In short, the <build> tag allows you to customize the build process for your Maven project by specifying various 
+      configuration options that Maven will use during the build.
+11) 
+
+
+
+<context-param>
+  <param-name>contextConfigLocation</param-name>
+  <param-value>/WEB-INF/spring-config/bean.xml</param-value>
+</context-param>
+in the web.xml file  where our bean.xml file is present in the spring-config folder inside WEB-INF folder
+
+8) if we want to declare or initialize the beans and declare in the bean.xml files and then 
+
+9) if we want to run the certain function in the class  
+
+@PostConstruct
+    public void init() {
+        // Perform any initialization here
+        // This method will be called after all dependencies have been injected
+    }
+
+
+@PostConstruct is part of the Java EE standard, and it is also supported by Spring.
+Similarly to @PostConstruct, @PreDestroy can be used to perform any necessary clean-up or shutdown operations before the bean is destroyed.
+
+::: JBOSS Server :::
+===============================:::  contents :::==============================
+1)<?xml version='1.0' and encoding='utf-8'?> ::: like any xml documents it contains <?xml version='1.0' and encoding='utf-8'?> it just say which version of the xml we are using just like which 
+version of the html we are using 
+2)  <server xmlns="urn:jboss:domain:16.0">   ::: then we have the tag 
+   <server xmlns="urn:jboss:domain:16.0"> 
+     everything we need are inside here 
+
+   </server> 
+3) <extensions>                              :::inside the server there is <extensions> all the extension are added and the major
+ functionalities of the server are due to these extensions 
+it might do one of the following tasks
+Adding support for new Java libraries or frameworks
+Implementing new security protocols
+Enabling new database connectors
+Providing additional messaging services
+Enhancing performance or scalability
+modules just contains the configuration files for those functions to be carried out
+4) <subsystem xmlns=>  it contains all modular subsytem 
+ a) they may be for the datasource configuration <subsystem xmlns ="urn:jboss:domain:datasources:6.0>
+ d) 
+ b) They may be for the webservice call configuration <subsystem xmlns ="urn:jboss:domain:logging:8.0>
+ d) 
+ c) They may be for the logging configuration <subsystem xmlns ="urn:jboss:domain:logging:8.0>
+ d) 
+
+5) <socket-binding-group> ::: it contains the collection of the socket-binding 
+6) <socket-binding>       ::: it represent the socketbinding, port etc for the http https,ajp and other protocal for the server 
+   it also contains the some custom socket-bindings a well like management-http 
+7) <server xmlns="urn:jboss:domain:13.0">
+    <extensions>
+        <!-- Extension modules here -->
+    </extensions>
+    <system-properties>
+        <!-- System properties here -->
+    </system-properties>
+    <management>
+        <!-- Management subsystem here -->
+    </management>
+    <profile>
+        <subsystem xmlns="urn:jboss:domain:undertow:12.0">
+            <!-- Undertow subsystem configuration here -->
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:datasources:6.0">
+            <!-- Datasources subsystem configuration here -->
+        </subsystem>
+        <!-- Other subsystems here -->
+    </profile>
+</server>
+
+
+pom.xml
+
+==================================================================GIT NOTES=================================================
+1) git config --list ===> This will show the local setting and email  assocaited with the repo
+The above command will result in this 
+credential.helper=osxkeychain
+init.defaultbranch=main
+color.ui=true
+user.name=“sumankoder”
+user.email=suman.k.coder308@gmail.com
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslverify=false
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+core.precomposeunicode=true
+remote.origin.url=https://github.com/suman308/Javascripts-miniprojects.git
+remote.origin.fetch=+refs/heads/:refs/remotes/origin/
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+2) git config --global --list => This will show the remote setting and emails associated with the repo
+
+3) git config --global user.name "NEW_NAME"
+   git config --global user.email "NEW_EMAIL"  to change the global user account 
+
+4) git branch --set-upstream-to=upstream_branch local_branch
+
+5) git branch ===> it will show all the branches in the local 
+    master
+   * notes  we are at this local branch
+6) git branch -a ===> it will show all the branches both remote and local 
+    master
+* notes
+  remotes/origin/HEAD -> origin/master this is the symbolic head to say we are at this in the local 
+  remotes/origin/master -> one of the remote branchs in remotes
+
+  7) git remote -v 
+     it will show all the remote repos connected to our local repo
+
+  8) git push -u origin master ===> for the first
+
+  9) even if we remove use the config username and password we have to remove the gitkey chain in the mac 
+  since it will have the username and password from earlier setup 
+  10) we cannot use the password to set upstream branch or the push to the new branch we have to generate 
+  personal token going to setting developers tool and user the username and in place of the password 
+  we have to use that personal acess token for the first time authentication and we need to do this once we 
+  have deleted the git.com from the keychain in mac
+  11) If i do the personal access token then in keychains the git.com file is auto generated in case of mac.
+  
+
 
 
 
