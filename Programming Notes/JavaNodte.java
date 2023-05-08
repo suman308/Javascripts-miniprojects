@@ -2558,6 +2558,13 @@ branch.master.merge=refs/heads/master
   we have to use that personal acess token for the first time authentication and we need to do this once we 
   have deleted the git.com from the keychain in mac
   11) If i do the personal access token then in keychains the git.com file is auto generated in case of mac.
+
+  12) git push origin release_master_notes_java ===> it will push the to the release-master_notes_java branches
+
+  13) git checkout will mesh up the working directory . 
+
+  14) cloning is cloning the master and origin is the url of the whole repo and all of the branch 
+  so cloning on branch will bring every single branches
   
 
 
