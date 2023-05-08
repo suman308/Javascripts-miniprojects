@@ -2580,7 +2580,12 @@ branch.master.merge=refs/heads/master
        start commiting also we have to set the remote branch for this. 
 
 
-   19) 
+   19) git reset <commit-hash> ===> it will reset the local repo to last commit but our working folder will 
+   still have the same things without any change can we can commit that to local repo 
+   20) git reset --hard <commit-hash> ===> it will reset the local and our working folder to the previous commit 
+   21) neither git reset nor git reset --hard  will make anychanges to the remote repo 
+
+   
 
 
 
