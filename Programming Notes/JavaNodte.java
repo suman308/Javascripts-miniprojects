@@ -2573,10 +2573,14 @@ branch.master.merge=refs/heads/master
    17) git push --set-upstream origin release/master_notes_java ===> will connect the current local branch 
        to remote repo
 
-   18) whether we are checkingout commit or we are checking out branch we are making new branch every 
-        single time 
+   18) If we are checking out commit then we are in the headless state and we are not pointing to anything 
+       checkingout commit will only change our working directory to refect the commit but there will be no 
+       local or remote branches tracking. If we really want to keep this commit version and work on it 
+       we have to make local branch after checking out the commit using git branch nameOfTheBranch and 
+       start commiting also we have to set the remote branch for this. 
 
-   
+
+   19) 
 
 
 
