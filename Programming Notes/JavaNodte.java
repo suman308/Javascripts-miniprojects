@@ -2565,7 +2565,15 @@ branch.master.merge=refs/heads/master
 
   14) cloning is cloning the master and origin is the url of the whole repo and all of the branch 
   so cloning on branch will bring every single branches
-  
+  15) How to change the name of the local branch git branch -m <old_branch_name> <new_branch_name>
+
+  16) if we have the different name of the local and remote branch then we may not be able to push 
+
+     even though we have set the new branch in the remote and made the personal access key . 
+   17) git push --set-upstream origin release/master_notes_java ===> will connect the current local branch 
+       to remote repo
+
+
 
 
 
