@@ -2573,6 +2573,8 @@ branch.master.merge=refs/heads/master
    17) git push --set-upstream origin release/master_notes_java ===> will connect the current local branch 
        to remote repo
 
+   18) I am checking out how checking out a commit works 
+
 
 
 
