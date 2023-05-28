@@ -2379,7 +2379,7 @@ CASE
 END AS QuantityText
 FROM OrderDetails;
 					
-					====================================================================< spring notes >=================================================
+====================================================================< spring notes >=================================================
 
 1)  POM:: POM file in maven:: every  pom is registered to collection of schema  as XML name space and it should be registered in xmlns (XML Name space)
 
@@ -2544,18 +2544,18 @@ branch.master.merge=refs/heads/master
     master
 * notes
   remotes/origin/HEAD -> origin/master this is the symbolic head to say we are at this in the local 
-  remotes/origin/master -> one of the remote branchs in remotes
+  remotes/origin/master -> it is the source of the branches from where all the branches has been branched 
 
   7) git remote -v 
      it will show all the remote repos connected to our local repo
 
   8) git push -u origin master ===> for the first
-
   9) even if we remove use the config username and password we have to remove the gitkey chain in the mac 
   since it will have the username and password from earlier setup 
   10) we cannot use the password to set upstream branch or the push to the new branch we have to generate 
   personal token going to setting developers tool and user the username and in place of the password 
-  we have to use that personal acess token for the first time authentication and we need to do this once we 
+  we have to use that personal acess token
+ for the first time authentication and we need to do this once we 
   have deleted the git.com from the keychain in mac
   11) If i do the personal access token then in keychains the git.com file is auto generated in case of mac.
 
@@ -2585,7 +2585,8 @@ branch.master.merge=refs/heads/master
    20) git reset --hard <commit-hash> ===> it will reset the local and our working folder to the previous commit 
    21) neither git reset nor git reset --hard  will make anychanges to the remote repo 
 
-   
+   22) Revert is equal to the rollback in intellj and revert doesn't changes the commit history but create new commit 
+      but reset --hard will erase all the commit after the specific commit we have decided to go to  
 
 
 
