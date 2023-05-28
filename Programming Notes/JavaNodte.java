@@ -2543,7 +2543,7 @@ branch.master.merge=refs/heads/master
 6) git branch -a ===> it will show all the branches both remote and local 
     master
 * notes
-  remotes/origin/HEAD -> origin/master this is the symbolic head to say we are at this in the local 
+  remotes/origin/HEAD -> origin/master this is the symbolic head that says that this is the origin of all the branches 
   remotes/origin/master -> it is the source of the branches from where all the branches has been branched 
 
   7) git remote -v 
