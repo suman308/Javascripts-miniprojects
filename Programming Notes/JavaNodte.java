@@ -2586,7 +2586,8 @@ branch.master.merge=refs/heads/master
    21) neither git reset nor git reset --hard  will make anychanges to the remote repo 
 
    22) Revert is equal to the rollback in intellj and revert doesn't changes the commit history but create new commit 
-      but reset --hard will erase all the commit after the specific commit we have decided to go to  
+      but reset --hard will erase all the commit after the specific commit we have decided to go to and also it changes the working directory as 
+      well 
 
 
 
