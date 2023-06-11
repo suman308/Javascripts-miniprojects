@@ -2588,10 +2588,32 @@ branch.master.merge=refs/heads/master
    22) Revert is equal to the rollback in intellj and revert doesn't changes the commit history but create new commit 
       but reset --hard will erase all the commit after the specific commit we have decided to go to and also it changes the working directory as 
       well 
+   23) Nothing will change the remote branch reset , hard reset , revert or rollbacks will not change anything in the remote branches.
+   24) ALso we cannot checkout the remote branches . only the local branches can be checkout. And we can only push to the remote branch that is 
+   tracked by the local branch. So we have to change the head  of the local branch to the specific remote branch if we want to push to the 
+   particular remote branch. ie the local branch is the portal to the remote branch. 
 
 
 
 
+==============================   git checkout branches      ========
+a) git checkout branchname ==> If the local branch  is there then it will switch to the local branch and that lcoal branch is portal to 
+ But in vscode and intellij there is switch to option in for the remote branches actually we cannot directly checkout to any remote branch 
+ . If we do switch to remote it will create a new local branch with that name and make it track the remote branch. Basically it is doing 
 
+ b) git branch newBranch 
+  git checkout new-branch 
+
+ git push --set-upstream origin newBranch it will also create the remote branch if it is not present already 
+
+ even we can do git push origin newBranch name to create the new remote branch 
+
+ c) git checkout -b fix-failing-tests origin/fix-failing-tests 
+
+ it will first create fix-failing-test local branch and then pull the changes from fix-failing-tests branch which is already present in the 
+ remote 
+
+ 
+ 
 
 
