@@ -2606,14 +2606,15 @@ a) git checkout branchname ==> If the local branch  is there then it will switch
 
  git push --set-upstream origin newBranch it will also create the remote branch if it is not present already 
 
- even we can do git push origin newBranch name to create the new remote branch 
+ even we can do git push origin newBranch name to create the new remote branch VVimp:- one local can have only one remote 
+ but one remote can have multiple local branch .
 
- c) git checkout -b fix-failing-tests origin/fix-failing-tests 
+ c) git checkout -b fix-failing-tests origin/release/fix-failing-tests VVIMP:: origin/release/ is mandatory for the remote repo
 
  it will first create fix-failing-test local branch and then pull the changes from fix-failing-tests branch which is already present in the 
  remote 
 
- 
+
  
 
 
