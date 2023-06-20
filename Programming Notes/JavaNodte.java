@@ -1,5 +1,4 @@
-=====================================================INTRODUCTION IN JAVA ===========================================================
-
+=====================================================INTRODUCTION IN JAVA ==============================================================
 System => is perdefined class  that contains that there variable 
 
 out => using out we can print data on console  and write from file 
@@ -8,14 +7,11 @@ in => read the data from console
 
 err => print data on console 
 
-
-
-
 1) if return type is boolean then it can only be true or false 
 
-2) if return type is String int or any other data type then we can return null;
+2) if return type is String int or any other data type then we can return null
 
-=====================================================================================OPERATORS IN JAVA ========================================================================
+=================================================================================( OPERATORS IN JAVA )========================================================================
 1) Uniary operator :::
      increment operator:: 
      1) pre-increment /decrement => ++i, --i
@@ -175,8 +171,7 @@ difference between == and boolean equal
     return "this is the data of 
     the class   " + this.data
    }
-5) enum  
-                                     ::: it  are collection of the constant  by default it is static and constant 
+5) enum        ::: it  are collection of the constant  by default it is static and constant 
   enum level {
       SUMAN,
        RAM, 
@@ -286,7 +281,6 @@ Array ::: Advantages ::
  1) Homogeneous data are stored 
          2) Type casting is not required 
          3) Performance is High 
-
 
 
 ***imp *** one important thing is we have to import the array anad arraylist from the util of the java at the top of the program::
@@ -2236,10 +2230,14 @@ what is logger in the spring ::: It is the format at which the information is lo
                                  something is logged in the java or spring console which is called as the default console 
                                  
 
+=====================================================================( SPRING MVC )================================================================
+1) spring mvc is crafted around the dispatcher servlet and dispatcher servlet require the webapplication context which is applicationcontext 
+
+2) 
 
 
 
-====================================================================================( Interview preparation  )========================================================================
+=============================================================( Interview preparation  )=============================================================
 1) Functional interface :: they are the interface that have the one and only abstract method and abstract method is the method that have the  doesn't have the body but just the 
    declaration, abstract method cannot be final since they are to be implemented somewhere else and where they are implemented they will be given body 
    so the lambda expression have more than one non-abstract function but it cannot have more than one abstract function 
@@ -2408,40 +2406,60 @@ go for the things about the modules and in the parent project we have to add the
 in the resources folder and if we have to change the location of the bean.xml file then we have to provide the 
 8) The <build> tag in a Maven pom.xml file is used to configure the build process for a project. This section contains information about how the project should be built, such as what plugins to use, which goals to execute, and what directories to include or exclude.
 
-Here are some common elements that you might find in the <build> section of a pom.xml file:
+ a) Here are some common elements that you might find in the <build> section of a pom.xml file:
 
       <plugins>            : This element allows you to configure the plugins that are used during the build process. 
                               Each plugin can be configured with its own set of goals, parameters, and dependencies.
       <resources>          : This element specifies the resources (e.g., properties files, XML files) that should be included in the build.
       <testResources>      : This element specifies the test resources that should be included in the build.
       <sourceDirectory>    : This element specifies the directory where the project's source code is located.
-      <testSourceDirectory>: This element specifies the directory where the project's test code is located.
-
-9) <directory>       : tag inside the <build> section of a Maven pom.xml file is used to specify the output directory for the project's build artifacts.
+      <testSourceDirectory>: This element specifies the directory where the project's test code is located. <directory>       : tag inside the <build> section of a Maven pom.xml file is used to specify the output directory for the project's build artifacts.
       <build>
          <directory>./output</directory> 
          ...
       </build>
-The project build artifact will be stored in the output folder which is in the root directory of where the 
+b) The project build artifact will be stored in the output folder which is in the root directory of where the 
       pom.xml is present
-10)<outputDirectory> :tag in the <build> section of a Maven pom.xml file is used to specify the directory where the compiled application 
+<outputDirectory> :tag in the <build> section of a Maven pom.xml file is used to specify the directory where the compiled application 
       code (e.g., .class files) should be placed. This tag specifies the output directory for the compiled code only, whereas 
       the <directory> tag specifies the output directory for all other build artifacts.
       In short, the <build> tag allows you to customize the build process for your Maven project by specifying various 
       configuration options that Maven will use during the build.
-11) 
 
+c) Inside the build tag => plugins tag => plugin   we have to have at least the maven compailer plugin and apache maven plugin 
+   which will have the source target and release(only after the java 9) to specifiy which java version we need to use for compiling the code 
 
+d) we can have other plugins as well 
+   maven-compiler-plugin: Configures the Java compiler settings such as source and target compatibility versions.
 
+         i)      maven-surefire-plugin: Executes unit tests during the test phase of the build process.
+
+         ii)     maven-jar-plugin: Packages the compiled code and resources into a JAR file.
+
+         iii)    maven-war-plugin: Packages the compiled code, resources, and web-related files into a WAR (Web Application Archive) file.
+
+         iv)     maven-dependency-plugin: Provides functionalities for managing project dependencies, such as copying dependencies, analyzing dependencies, and more.
+
+         v)      maven-release-plugin: Automates the release process, including versioning, tagging, and deploying releases to a remote repository.
+
+         vi)     maven-resources-plugin: Processes and copies resources (e.g., properties files, XML files) into the output directory.
+
+         vii)    maven-assembly-plugin: Creates custom assemblies by bundling files from different sources into a single artifact.
+
+         viii)   maven-site-plugin: Generates project documentation and reports, which can include code documentation, test reports, code coverage, and more.
+
+         ix)     maven-clean-plugin: Cleans the build directory by removing generated output and intermediate files.
+
+9) 
 <context-param>
   <param-name>contextConfigLocation</param-name>
   <param-value>/WEB-INF/spring-config/bean.xml</param-value>
 </context-param>
 in the web.xml file  where our bean.xml file is present in the spring-config folder inside WEB-INF folder
 
-8) if we want to declare or initialize the beans and declare in the bean.xml files and then 
+ if we want to declare or initialize the beans and declare in the bean.xml files and then 
 
-9) if we want to run the certain function in the class  
+ if we want to run the certain function in the class  
 
 @PostConstruct
     public void init() {
