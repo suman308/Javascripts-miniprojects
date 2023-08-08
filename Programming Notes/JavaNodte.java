@@ -2449,6 +2449,8 @@ d) we can have other plugins as well
          viii)   maven-site-plugin: Generates project documentation and reports, which can include code documentation, test reports, code coverage, and more.
 
          ix)     maven-clean-plugin: Cleans the build directory by removing generated output and intermediate files.
+   e) Inside the build tag and plugin tag we need to add another plugin in tag for the packaging which ever version we need war rar or ear jar 
+   so that we can package the application accordingly.
 
 9) 
 <context-param>
@@ -2470,7 +2472,66 @@ in the web.xml file  where our bean.xml file is present in the spring-config fol
 
 @PostConstruct is part of the Java EE standard, and it is also supported by Spring.
 Similarly to @PostConstruct, @PreDestroy can be used to perform any necessary clean-up or shutdown operations before the bean is destroyed.
+===============================================================================================================================================
+==========================================   :::   SPRING MVC APPLICATION ARCHITECTURE  :::   =================================================
+===============================================================================================================================================
+To understand about the architecture about the spring mvc architecture we will go from the place where the request is first started 
+1) web.xml is the first deployment discriptor in the old spring mvc application architecture and it contains following things 
+The  minimum things that a web.xml might contains are as followings 
 
+  
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>MyWebApplication</display-name>
+
+    <!-- Servlet Mapping -->
+    <servlet>
+        <servlet-name>MyServlet</servlet-name> // this shoould be the name of the servlet 
+        <servlet-class>com.example.MyServlet</servlet-class> // this has to be the servlet class provided by javax 
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>  // it will be name from above servelt-name with servlet-class
+        <url-pattern>/myservlet</url-pattern>   // it will provide the url patterns that will be handled by the servlet class 
+    </servlet-mapping>
+
+    <!-- Filter Mapping -->
+
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>com.example.MyFilter</filter-class>  // It is the class with doFilter doPost class etc that will handle the url
+    </filter>
+
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/</url-pattern>                        // the patterns of the urls that will be handled by the dofilter function of the myfilter class 
+    </filter-mapping>
+    // init param is the way to send the details from web.xml to the java files
+    <init-param> 
+         <param-name> pathList </param-name> 
+         <param-value> localhome.jsp, index.jsp, monitor.jsp,app/init/support,/dealer/  </param-value>
+    </init-param>
+// to get the all the para-value in java class we have to use String pathlist = filterConfig.getInitParameter("pathList")
+    <listener>
+        <listener-class>com.example.MyListener</listener-class>
+    </listener>
+
+</web-app>
+1) If we put the web.xml then we have to put the servlet tag in the web.xml 
+2) when running the application then the jvm will look for the name-servlet.xml file so we have to put the file there.
+3) when the url request goes to one of the doFilter functioon of the 
+FLOW OF THE INFORMATION IN THE WEB.XML ARCHIITECTURE :::
+VVVImp :- when the url request is sent it is first intercepted by all the filter mapping and and their doFilter function of those filters 
+          in the sequences they are listed then it will be send to the respected servlet class.
+          But what we have to do in the doFilter method of the first filter mapping class is 
+          inside the doFilter function we have to put filterChain.doFilter(request, response)
+          And if there are no filter in the web.xml in the filterchain then the request will go the the servlet class 
+          vvimp :- if we do not do the filterchain.doFilter(request,response) then it will not go to the next filter mapping or the servlet 
+          we have to do filterchain.... in every single filter mapping dofilter class to make the url request going 
+VVVImp :- When we have the 
 ::: JBOSS Server :::
 ===============================:::  contents :::==============================
 1)<?xml version='1.0' and encoding='utf-8'?> ::: like any xml documents it contains <?xml version='1.0' and encoding='utf-8'?> it just say which version of the xml we are using just like which 
